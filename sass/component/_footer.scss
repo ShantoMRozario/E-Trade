@@ -1,0 +1,106 @@
+// Imports
+@import "../variables/variables";
+@import "../mixin/mixin";
+
+/* footer start */
+#footer{
+    padding: 50px 0 0;
+    .footer_main{
+        border-bottom: 2px solid #f1f1f1;
+    }
+}
+.footer_item{
+    margin-bottom: 40px;
+    
+    .footer_info{
+        p{
+            padding-bottom: 30px;
+            color: $color_body;
+            font-size: 16px;
+            font-weight: $regular;
+        }
+        ul{
+            li{
+                margin-bottom: 12px;
+                a{
+                    color: $color_body;
+                    font-weight: $regular;
+                    font-size: 16px;
+                    transition: all linear .3s;
+                    &:hover{
+                        color: $color_heading;
+                    }
+                    &:hover i{
+                        color: $color_heading;
+                    }
+
+                    i{
+                        font-size: 16px;
+                        color: $color_body;
+                        transition:  all linear .3s;
+                        padding-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+    .footer_info_menu{
+        ul{
+            li{
+                margin-bottom: 12px;
+                a{
+                    font-size: 16px;
+                    font-weight: $medium;
+                    color: $color_body;
+                    transition: all linear .3s;
+                    position: relative;
+                    &:hover{
+                        color: $color_heading;
+                    }
+                    &::after{
+                        content: "";
+                        position: absolute;
+                        width: 0;
+                        height: 2px;
+                        bottom: 0;
+                        right: 0;
+                        opacity: 0;
+                        visibility: hidden;
+                        background: $color_heading;
+                        transition: all linear .3s;
+
+                    }
+                    &:hover::after{
+                        width: 100%;
+                        left: 0;
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+    }
+    .footer_download{
+        span{
+            font-size: 16px;
+            font-weight: $regular;
+            color: $color_body;
+            display: block;
+            padding-bottom: 12px;
+        }
+        .footer_download_btn{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            .playstore{
+                a{
+                    &:nth-child(1){
+                        padding-bottom: 15px;
+    
+                    }
+                }
+            }
+        }
+    }
+}
+/* footer end */

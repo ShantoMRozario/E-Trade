@@ -1,0 +1,135 @@
+// Imports
+
+@import "../variables/variables";
+@import "../mixin/mixin";
+
+/* best seller start*/ 
+#best_seller{
+    padding: 80px 0;
+
+    .common_heading{
+        .title{
+            span{
+                @include common_heading_span($color_pink);
+                i{
+                    @include common_heading_icon($color_white,$color_pink);
+                }
+                
+            }
+        }
+        .head{
+            h3{
+                @include common_heading_head;
+            }
+        }
+    }
+}
+.sale_slide{
+    
+    .slide_item{
+        margin: 0 15px;
+        margin-top: 20px;
+        max-width: 330px;
+        position: relative;
+
+        &::before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 70%;
+            background: #f7f7f7;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            border-radius: 6px;
+            transition: .3s;
+        }
+        .b_s_cart{
+            a{
+                width: 45px;
+                height: 45px;
+                border-radius: 50%;
+                border: 2px solid $color_white;
+                background: $color_ash;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: all linear .3s;
+                position: absolute;
+                top: -20px;
+                right: 20px;
+
+
+                &:hover{
+                    background: $theme_color_blue;
+                    
+                }
+                &:hover i{
+                    color: $color_white;
+                    
+                }
+
+                i,svg{
+                    font-size: 18px;
+                    color: $color_heading;
+                    transition:  all linear .3s;
+                }
+                
+            }
+        }
+
+        .b_s_content{
+            padding: 40px 30px 0;
+            .title{
+                a{
+                    font-size:20px ;
+                    font-weight: $medium;
+                    color: $color_heading;
+                    text-transform: capitalize;
+                    margin-bottom: 10px;
+                    transition: all linear .3s;
+                    &:hover{
+                        color: $theme_color_blue;
+                    }
+                }
+            }
+            .price{
+                h4{
+                    font-size: 16px;
+                    font-weight: $bold;
+                    color: $color_heading;
+                    span{
+                        padding-left: 4px;
+                        color: #d6d6d6;
+                        text-decoration: line-through;
+                    }
+                }
+            }
+            .stars{
+                margin-top: 10px;
+                i,svg{
+                    color: #ffdc60;
+                    font-size: 13px;
+
+                }
+                span{
+                    font-size: 13px;
+                    margin-left: 5px;
+                    font-weight: $medium;
+                }
+
+            }
+        }
+        .b_s_image{
+            a{
+                img{
+                    transition: all linear .3s;
+                }
+            }
+        }
+        &:hover .b_s_image a img{
+            transform: scale(0.9);
+        }
+    }
+}
+/* best seller end*/ 

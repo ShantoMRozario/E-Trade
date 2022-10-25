@@ -1,0 +1,82 @@
+// Imports
+@import "../variables/variables";
+@import "../mixin/mixin";
+
+/* Feedback Start */ 
+#feedback{
+    padding: 80px 0;
+    background: $color_offwhite;
+
+    .common_heading{
+        .title{
+            span{
+                @include common_heading_span($color_pink);
+                i{
+                    @include common_heading_icon($color_white,$color_pink);
+                }
+                
+            }
+        }
+        .head{
+            h3{
+                @include common_heading_head;
+            }
+        }
+    }
+    .slick-current{
+        margin-top: 30px;
+    }
+}
+.feedback_slider{
+    .item{
+        .comment{
+            margin: 20px;
+            border-radius: 10px;
+            padding: 40px;
+            filter: drop-shadow( 0 10px 5px rgba(0, 0, 0, .05));
+            background: $color_white;
+            margin-bottom: 40px;
+            position: relative;
+            &::after{
+                position: absolute;
+                content: "";
+                width: 0;
+                height: 0;
+                left: 35%;
+                bottom: -25px;
+                border-left:100px solid $color_white ;
+                border-bottom:50px solid transparent ;
+                transform: translateX(-50%);
+            }
+
+            p{
+                font-size: 16px;
+                line-height: 28px;
+                color: $color_body;
+                font-weight: $regular;
+
+            }
+        }
+        .profile{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            .text{
+                h5{
+                    font-size: 14px;
+                    font-weight: $regular;
+                    color: $color_body;
+                    text-transform: capitalize;
+                }
+                h4{
+                    font-size: 18px;
+                    font-weight: $medium;
+                    color: $color_heading;
+                    text-transform: capitalize;
+                }
+            }
+        }
+        
+    }
+}
+/* Feedback End */ 

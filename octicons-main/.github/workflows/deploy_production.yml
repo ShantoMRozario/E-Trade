@@ -1,0 +1,29 @@
+name: Deploy to production
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'lib/**'
+      - 'icons/**'
+      - 'docs/**'
+      - '.github/workflows/deploy*.yml'
+      - 'package.json'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build_deploy:
+    name: Build and deploy
+    uses: primer/.github/.github/workflows/deploy.yml@main
+    secrets:
+      gh_token: ${{ secrets.GITHUB_TOKEN }}
+    with:
+      node_version: 14
+      install: yarn && cd docs && yarn && cd ..
+      build: yarn build:docs
+      output_dir: docs/public

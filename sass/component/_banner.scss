@@ -1,0 +1,167 @@
+// Imports
+
+@import "../variables/variables";
+@import "../mixin/mixin";
+
+/* Banner Start */ 
+// #banner{
+
+// }
+.banner_main{
+    display: grid;
+    grid-template-columns: 238px 1fr 220px;
+    padding: 40px 0;
+    .banner_slide{
+        margin:0 40px 0 50px ;
+        height: 390px;
+        background-color: #f7f7f7;
+        border-radius: 6px;
+        padding: 48px 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+        &::after{
+            position: absolute;
+            content: "";
+            left: 60%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            width: 288px;
+            height: 288px;
+            background: $color_white;
+            border-radius: 50%;
+            z-index: -1;
+        }
+        .text{
+            .heading{
+                display: flex;
+                align-items: center;
+                i,svg{
+                    width: 25px;
+                    height: 25px;
+                    background: $color_pink;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: $color_white;
+                    border-radius: 50%;
+                    padding: 5px;
+                    
+                }
+                h4{
+                    font-size: 14px;
+                    color: $color_pink;
+                    text-transform: capitalize;
+                    margin-left: 10px;
+                    font-weight: $bold;
+                }
+            }
+            .info{
+                padding-top: 25px;
+                padding-bottom: 60px;
+                h1{
+                    font-size: 50px;
+                    font-weight: $bold;
+                    color: $color_heading;
+                    text-transform: capitalize;
+                }
+            }
+            .ban_btn{
+                a{
+                    font-weight: 16px;
+                    font-weight: $bold;
+                    color: $color_heading;
+                    display: inline-block;
+                    position: relative;
+                    transition: all linear .3s;
+                    &::after{
+                        content: "";
+                        position: absolute;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        bottom: 0;
+                        width: 95%;
+                        height: 1px;
+                        background: $color_heading;
+                    }
+
+                    i{
+                        padding-left: 20px;
+                        transition: all linear .3s;
+                    }
+                    &:hover{
+                        color: $theme_color_blue;
+
+                    }
+                    &:hover::after{
+                        background: $theme_color_blue;
+
+                    }
+                    &:hover i{
+                        padding-left: 10px;
+
+                    }
+                }
+            }
+        }
+
+    }
+    .banner_right{
+        background-color: #f7f7f7;
+        border-radius: 6px;
+        padding: 50px 35px;        
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        &::after{
+            content: "";
+            height: 160px;
+            width: 160px;
+            background: $color_white;
+            border-radius: 50%;
+            position: absolute;
+            top: 20%;
+            right: 5%;
+            z-index: -1;
+        }
+       
+        .text{
+            margin-top: 35px;
+            a{
+                font-size: 16px;
+                font-weight: $medium;
+                color: $color_body;
+                margin-bottom: 8px;
+                text-transform: capitalize;
+                &:hover{
+                    color: $theme_color_blue;
+                }
+            }
+            h4{
+                font-size: 20px;
+                font-weight: $bold;
+                color: $color_heading;
+            }
+        }
+    }
+    .swiper-pagination-bullet {
+        width: 30px;
+        height: 5px;
+        border-radius: 6px;
+        background: $color_white;
+        transition: all linear .3s;
+    }
+    .swiper-pagination-bullet.swiper-pagination-bullet-active {
+        width: 40px;
+        height: 5px;
+        background: $color_pink;
+    }
+    .swiper {
+        width: 100%;
+        height: 100%;
+      }
+      
+}
+/* Banner End */ 

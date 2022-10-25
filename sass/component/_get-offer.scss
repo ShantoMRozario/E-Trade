@@ -1,0 +1,56 @@
+// imports
+// @import "../common/common";
+@import "../variables/variables";
+@import "../mixin/mixin";
+
+/* Get Offer Start*/ 
+.get_offer{
+    background: url(../images/get_offer-bg.png) no-repeat, center/cover;
+    padding: 10px 0;
+    position: relative;
+    .get_offer_main{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        span{
+            font-size: 14px;
+            font-weight: $bold;
+            color: #fff;
+            padding: 0 5px;
+        }
+        p{
+            font-size: 14px;
+            color: #eeb2ff;
+            font-weight: $regular;
+            padding: 0 5px;
+            a{
+                padding: 0 5px ;
+                font-weight: $bold;
+                color: #fff;
+                text-transform: capitalize;
+                text-decoration: underline;
+                transition: all linear .3s;
+                &:hover{
+                    color: #ff497c;
+                }
+    
+            }
+        }
+    }
+    .close_btn{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 50px;
+        i{
+            font-size: 12px;
+            color: #fff;
+            cursor: pointer;
+            font-weight: $regular;
+            &:hover{
+                color: $theme_color_blue;
+            }
+        }
+    }
+}
+/* Get Offer End*/ 

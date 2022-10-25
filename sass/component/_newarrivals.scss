@@ -1,0 +1,110 @@
+// Imports
+
+@import "../variables/variables";
+@import "../mixin/mixin";
+
+/* New Arrivals start*/
+#new_arrival {
+    overflow-x: hidden;
+    padding-top: 80px;
+    
+    
+    
+    .silder_container{
+        margin-left: 0;
+    }
+    .slick-list{
+        overflow: visible;
+        margin-left: -16px;
+    }
+    .common_heading{
+        .title{
+            span{
+                @include common_heading_span($color_purple);
+                i{
+                    @include common_heading_icon($color_white,$color_purple);
+                }
+                
+            }
+        }
+        .head{
+            h3{
+                @include common_heading_head;
+            }
+        }
+    }
+}
+
+.slide_wrapper {
+    padding-bottom: 50px;
+    border-bottom: 2px solid $color_border;
+    .slide_item {
+        text-align: center;
+        margin: 0 15px;
+
+        .image {
+            position: relative;            
+
+            .item_image {
+                border-radius: 6px;
+                overflow: hidden;
+
+                >a {
+                    display: block;
+                    position: relative;
+                    border-radius: 6px;
+                    transition: all linear .3s;
+
+                    .hover_img {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        opacity: 0;
+                        visibility: hidden;
+                        transition: all linear .3s;
+
+                    }
+                    
+                }
+                
+            }
+        }
+        &:hover .image .item_image a{
+            transform: scale(1.03);
+        }
+        &:hover .image .item_image a .hover_img {
+            opacity: 1;
+            visibility: visible;
+        }
+        &:hover .item_btn{
+            bottom: 15px;
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    // Hover-btn-animation
+    @keyframes hover_btn {
+        0%{
+            transform: translateY(-2px);
+            opacity: .1;
+        }
+        50%{
+            transform: translateY(-5px);
+            opacity: 0;
+        }
+        75%{
+            transform: translateY(5px);
+            opacity: 0;
+        }
+        100%{
+            transform: translateY(0px);
+            opacity: 1;
+        }
+        
+    }
+}
+
+
+
+/* New Arrivals End*/

@@ -1,0 +1,98 @@
+// Imports
+@import "../variables/variables";
+@import "../mixin/mixin";
+
+/* newsletter Start*/
+#newsletter{
+    padding-bottom:80px ;
+    .common_heading{
+        .title{
+            span{
+                @include common_heading_span($theme_color_blue);
+                i{
+                    @include common_heading_icon($color_white,$theme_color_blue);
+                }
+                
+            }
+        }
+        .head{
+            h3{
+                @include common_heading_head;
+            }
+        }
+    }
+}
+.nl_wrapper{
+    background: url(../images/bg-image-12.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:top;
+    padding: 100px 107px 85px ;
+    border-radius: 10px;
+    .form{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        input{
+            padding-left: 66px;
+            width: 390px;
+            line-height: 60px;
+            font-size: 14px;
+            font-weight: $regular;
+            color: $color_body;
+            background: $color_white;
+            border: 2px solid $color_border;
+            border-radius: 6px;
+            &::placeholder{
+                color: $color_body;
+                opacity: 1;
+            }
+            
+        }
+        .input_box{
+            position: relative;
+            &::before{
+                position: absolute;
+                content: "";
+                width: 25px;
+                height: 25px;
+                top: 50%;
+                left: 30px;
+                transform: translateY(-50%);
+                background: url(../images/send-mail.png);
+                z-index: 1;
+
+            }
+        }
+        button{
+            background: $color_heading;
+            color: $color_white;
+            border-radius: 6px;
+            border: none;
+            padding: 20px 38px;
+            font-size: 16px;
+            font-weight: $bold;
+            text-transform: capitalize;
+            position: relative;
+            z-index: 1;
+            &::before{
+                position: absolute;
+                content: "";
+                background: $color_heading;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                transition: all linear .2s;
+                z-index: -1;
+                border-radius: 6px;
+            }
+            &:hover::before{
+                transform: scale(1.05);
+            }
+        }
+    }
+}
+/* newsletter end*/

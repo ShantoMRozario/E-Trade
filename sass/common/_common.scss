@@ -1,0 +1,194 @@
+@import "../mixin/mixin";
+@import "../variables/variables";
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+}
+body{
+    overflow-x: hidden;
+}
+ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    display: inline-block;
+}
+p,h1,h2,h3,h4,h5,h6{
+    margin: 0;
+    padding: 0;
+}
+.no-after::after{
+    display: none;
+}
+.no-before::before{
+    display: none;
+}
+
+.common_heading{
+    position: relative;
+    @include arrow_btn;
+}
+
+.label{
+    @include label_position;
+    span{
+        @include label_span($color_white,$theme_color_blue);
+    }
+}
+/*common color btn*/ 
+.color_btn{
+    margin-top: 20px;
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    span{
+        cursor: pointer;
+        display: block;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: red;
+        border: 4px solid #fff; 
+
+        &:nth-child(1){
+            background: $color_orange;
+        }
+        &:nth-child(1).active{
+            outline: 2px solid $color_orange;
+        }
+
+        &:nth-child(2){
+            background: $color_pink;
+        }
+        &:nth-child(2).active{
+            outline: 2px solid $color_pink;
+        }
+
+        &:nth-child(3){
+            background: $color_purple;
+        }
+        &:nth-child(3).active{
+            outline: 2px solid $color_purple;
+        }
+    }
+}
+/*common title and price*/
+.text {
+    margin: 25px 0 30px;
+
+    .title {
+        margin-bottom: 10px;
+
+        a {
+            font-size: 16px;
+            font-weight: $medium;
+            color: $color_body;
+            transition: all linear .3s;
+
+            &:hover {
+                color: $theme_color_blue;
+            }
+        }
+    }
+
+    .price {
+        h5 {
+            font-weight: $bold;
+            font-size: 20px;
+            color: $color_heading;
+
+            span {
+                color: $color_body;
+                text-decoration: line-through;
+                margin-right: 4px;
+            }
+        }
+    }
+}
+/*common add to cart btn*/
+.item_btn{
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    transition: all linear .3s;
+    opacity: 0;
+    visibility: hidden;
+    .icon{ 
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $color_white;
+        border-radius: 4px;
+        position: relative;
+        i{
+            color: $color_heading;
+            font-size: 14px;
+        }  
+        &::before{
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            background: $color_white;
+            z-index: -1;
+            border-radius: 4px;
+            transition: all linear .2s;
+
+        }
+        &:hover i{
+            animation: hover_btn linear .3s;
+        }
+        &:hover::before{
+            transform: scale(1.2);
+        }                  
+    }
+    .cart{
+        font-size: 14px;
+        font-weight: $bold;
+        text-transform: capitalize;
+        width: 110px;
+        height: 40px;
+        background: $color_pink;
+        color: $color_white;
+        &::before{
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            background: $color_pink;
+            z-index: -1;
+            border-radius: 4px;
+            transition: all linear .3s;
+
+        }
+        &:hover::before{
+            transform: scale(1.15);
+        }  
+    }
+}
+/* Common Footer Heading */ 
+.footer_heading{
+    h5{
+        font-size: 18px;
+        font-weight: $bold;
+        color: $color_heading;
+        margin-bottom: 20px;
+        text-transform: capitalize;
+    }
+}

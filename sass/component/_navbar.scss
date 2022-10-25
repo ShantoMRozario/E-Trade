@@ -1,0 +1,358 @@
+//imports
+// @import "../variables/variables";
+@import "../mixin/mixin";
+
+nav {
+    background: $color_border;
+    
+}
+
+.menu_main {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+
+    .left_menu {
+        position: relative;
+
+
+        button {
+
+            background: $theme_color_blue;
+            color: $color_white;
+            padding: 18px 30px;
+            padding-right: 100px;
+            border: none;
+
+            span {
+                text-transform: capitalize;
+                font-size: 16px;
+                font-weight: $regular;
+                padding-left: 10px;
+            }
+
+        }
+
+        .left_side_menu {
+            position: absolute;
+            width: 100%;
+            background: $color_white;
+            border: 1px solid $color_border;
+
+            ul {
+                padding: 10px 30px;
+
+                li {
+                    cursor: pointer;
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        width: 100%;
+                        height: 1px;
+                        background: $color_border;
+                        bottom: 0;
+                        left: 0;
+
+                    }
+                    &:hover .megamenu{
+                        opacity: 1;
+                        visibility: visible;
+                        top: -10px;
+                    }
+
+                    &:hover .ad {
+                        opacity: 0;
+                        visibility: hidden;
+
+                    }
+
+                    &:hover .ar {
+                        opacity: 1;
+                        visibility: visible;
+
+                    }
+
+                    picture {
+                        img {
+                            width: 25px;
+                        }
+                    }
+
+                    a {
+                        text-transform: capitalize;
+                        font-size: 15px;
+                        color: $color_body;
+                        font-weight: $bold;
+                        padding: 15px 0;
+                        padding-left: 14px;
+
+
+                    }
+
+                    i {
+                        font-size: 12px;
+                        position: absolute;
+                        top: 50%;
+                        right: 0;
+                        transform: translateY(-50%);
+
+                    }
+
+                    .ad {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+
+                    .ar {
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+
+                    .megamenu {
+                        opacity: 0;
+                        visibility: hidden;
+                        display: grid;
+                        grid-template-columns: 1fr 1fr 1fr 2fr;
+                        width: 990px;
+                        padding: 40px;
+                        background: $color_white;
+                        border-radius: 0 0 24px 0;
+                        position: absolute;
+                        top: 0px;
+                        left: calc(100% + 30px);
+                        box-shadow: 40px 40px 48px 0px rgba(36,41,47,.1);
+                        transition: all linear .3s;
+                        z-index: 888;
+
+                        h4 {
+                            font-size: 16px;
+                            color: #000;
+                            margin: 14px 0;
+                            text-transform: capitalize;
+                            cursor: default;
+                        }
+
+                        ul {
+                            padding: 0;
+
+                            li {
+                                a {
+                                    text-transform: capitalize;
+                                    padding: 10px 0;
+                                    color: $color_body;
+                                    font-weight: $regular;
+                                    font-size: 14px;
+                                    transition: all linear .3s;
+
+                                    &:hover {
+                                        color: $theme_color_blue;
+                                    }
+                                }
+                            }
+                        }
+
+                        .imagegallery {
+                            display: grid;
+                            border-left: 1px solid $color_border;
+                            justify-content: center;
+                            align-items: center;
+                            grid-template-areas:
+                                "a a"
+                                "b b"
+                                "c c"
+                                "d e"
+                                "f f"
+                            ;
+
+                            .image:nth-child(1) {
+                                grid-area: a;
+                            }
+
+                            .image:nth-child(2) {
+                                grid-area: b;
+                            }
+
+                            .image:nth-child(3) {
+                                grid-area: c;
+                            }
+
+                            .image:nth-child(4) {
+                                grid-area: d;
+                            }
+
+                            .image:nth-child(5) {
+                                grid-area: e;
+                            }
+                            .image:nth-child(6) {
+                                grid-area: f;
+                            }
+
+                            .image{
+                                img{
+                                    transition: all linear .3s;
+                                }
+
+                                &:hover img{
+                                    transform: scale(1.1);
+                                }
+                            }
+                            .heading{
+                                h3{
+                                    text-transform: capitalize;
+                                    font-size: 16px;
+                                    color: #000;
+                                    margin-top: 12px;
+                                    margin-bottom: 12px;
+                                    margin-left: 12px;
+                                    font-weight: $bold;
+                                }
+                            }
+                            .gal_btn{
+                                a{
+                                    background: $theme_color_blue;
+                                    color: $color_white;
+                                    font-size: 20px;
+                                    text-transform: capitalize;
+                                    text-align: center;
+                                    font-size: 16px;
+                                    font-weight: $bold;
+                                    border-radius: 6px;
+                                    padding: 16px 87px;
+                                    margin-left: 12px;
+                                    transition: all linear .3s;
+                                    &:hover{
+                                        transform: scaleX(1.05);
+                                    }
+                                  
+
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+
+    .main_menu {
+        ul {
+            text-transform: capitalize;
+            padding-left: 40px;
+            display: flex;
+            align-items: center;
+            gap: 45px;
+
+            li {
+                position: relative;
+
+                &:hover ul {
+                    opacity: 1;
+                    visibility: visible;
+                }
+
+                a {
+                    font-weight: $bold;
+                    font-size: 16px;
+                    color: $color_heading;
+
+                    i {
+                        font-size: 10px;
+                        color: $color_body;
+                    }
+                }
+
+                ul {
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: all linear .25s;
+
+                    position: absolute;
+                    width: 250px;
+                    background: $color_white;
+                    top: 35px;
+                    left: 0;
+                    display: block;
+                    padding: 15px 30px;
+                    border-radius: 6px;
+                    box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.09);
+                    z-index: 1000;
+
+                    li {
+                        padding: 5px 0;
+
+                        a {
+                            text-transform: capitalize;
+                            font-weight: $medium;
+                            font-size: 16px;
+                            color: $color_heading;
+
+                            &:hover {
+                                color: $color_pink;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .right_menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+
+        .icon {
+            a {
+                position: relative;
+                z-index: 1;
+
+                &::after {
+                    position: absolute;
+                    content: "";
+                    width: 50px;
+                    height: 50px;
+                    background: $color_pink;
+                    z-index: -1;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%) scale(0);
+                    border-radius: 50%;
+                    transition: all ease-in-out 0.3s;
+                }
+
+                &:hover::after {
+                    transform: translate(-50%, -50%) scale(1);
+                }
+
+                &:hover i {
+                    color: $color_white;
+                }
+
+                i {
+                    font-size: 20px;
+                    color: $color_heading;
+                    transition: all linear .3s;
+                }
+
+                span {
+                    position: absolute;
+                    width: 15px;
+                    height: 15px;
+                    font-size: 12px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background: $theme_color_blue;
+                    border-radius: 50%;
+                    color: $color_white;
+                    top: -10px;
+                    right: -10px;
+                }
+            }
+        }
+    }
+}

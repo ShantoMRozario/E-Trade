@@ -1,0 +1,104 @@
+// Imports
+@import "../variables/variables";
+@import "../mixin/mixin";
+
+/*  Copyright start*/ 
+#copyright{
+    padding: 15px 0;
+}
+.copyright_main{
+    .social_icon{
+        display: flex;
+        a{
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            z-index: 1;
+                &::after {
+                    position: absolute;
+                    content: "";
+                    width: 35px;
+                    height: 35px;
+                    background: $color_pink;
+                    z-index: -1;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%) scale(0);
+                    border-radius: 50%;
+                    transition: all ease-in-out 0.3s;
+                }
+                &:hover::after {
+                    transform: translate(-50%, -50%) scale(1);
+                }
+                &:hover i {
+                    color: $color_white;
+                }
+
+            i{
+                font-size: 15px;
+                color: $color_body;
+            }
+        }
+    }
+    .cr_text{
+        p{
+            color: $color_body;
+            font-weight: $medium;
+            font-size: 14px;
+            span{
+                color: $color_body;
+                font-weight: $medium;
+                font-size: 14px;
+            }
+            a{
+                color: $color_body;                
+                position: relative;
+                &:hover{
+                    color: $color_heading;
+                }
+                &::after{
+                    content: "";
+                    position: absolute;
+                    width: 0;
+                    height: 2px;
+                    bottom: 0;
+                    right: 0;
+                    opacity: 0;
+                    visibility: hidden;
+                    background: $color_heading;
+                    transition: all linear .3s;
+
+                }
+                &:hover::after{
+                    width: 100%;
+                    left: 0;
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+    }
+    .pay_option{
+            display: flex;
+            align-items: center;
+            justify-content: end;
+        span{
+            text-transform: capitalize;
+            font-size: 14px;
+            color: $color_body;
+            font-weight: $medium;            
+        }
+        .payment_icon{
+            padding: 0 10px;
+           img{
+            padding:0  5px ;
+           }
+        }
+    }
+}
+/*  Copyright end*/ 

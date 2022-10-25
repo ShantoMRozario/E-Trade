@@ -1,0 +1,56 @@
+// Imports
+
+@import "../variables/variables";
+@import "../mixin/mixin";
+
+/* service Start */
+.service_main{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 40px;
+    .item{
+        background: $color_white;
+        border: 1px solid #f1f1f1;
+        padding: 50px 30px;
+        text-align: center;
+        margin-bottom: 30px;
+        border-radius: 6px;
+        transition: all linear .3s; 
+        position: relative;
+        &::after{
+            content: "";
+            position: absolute;
+            width: 90%;
+            height: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            background: $color_white;
+            border: 1px solid $color_border;
+            border-radius: 6px;
+            z-index: -1;
+            transition: all linear .3s;
+            
+        }
+
+        .text{
+            margin-top: 20px;
+            h4{
+                font-size: 16px;
+                font-weight: $bold;
+                color: $color_heading;
+                text-transform: capitalize;
+            }
+        }
+        &:hover{
+            box-shadow: $shadow;
+            
+        }
+        &:hover::after{
+            bottom: -12px;
+
+        }
+
+    }
+}
+/* service end */

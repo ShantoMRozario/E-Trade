@@ -1,0 +1,154 @@
+@import "../variables/variables";
+
+
+//Common Heading
+@mixin common_heading_icon($textcolor,$bgcolor) {
+    color: $textcolor;
+    background: $bgcolor;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 12px;
+    margin-right: 10px;
+} 
+@mixin common_heading_span($textcolor) {
+    color: $textcolor;
+    font-size: 14px;
+    font-weight: $bold;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+} 
+@mixin common_heading_head{
+    color: $color_heading;
+    margin-bottom: 30px;
+    font-size: 36px;
+    font-weight: $bold;
+    text-transform: capitalize;
+} 
+
+
+// label for price discount
+
+@mixin label_position {
+    position: absolute;
+    top: 30px;
+    right: -10px;
+    z-index: 1;
+}
+@mixin label_span($labelcolor,$labelbg_color) {
+    color: $labelcolor;
+    background: $labelbg_color;
+    font-size: 12px;
+    font-weight: $bold;
+    padding: 6px 15px 5px;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px 0 rgba(53, 119, 240, .3);
+    text-transform: uppercase;
+}
+
+
+// Arrow btn for slide
+
+@mixin arrow_btn {
+    .arrow_btn {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        position: absolute;
+        top: 50%;
+        right: 0;
+
+        .arrows{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background: #f6f7fb;
+            cursor: pointer;
+            border-radius: 6px;
+            position: relative;
+
+            &::before{
+                position: absolute;
+                content: "";
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: #f6f7fb;
+                transition: all linear .2s;
+                z-index: -1;
+                border-radius: 4px;
+
+            }
+
+            &:hover::before{
+                transform: scale(1.2);
+            }
+
+            &:hover .prevarrow{
+                animation: p_arrow_btn linear .3s;
+            }
+            &:hover .nextarrow{
+                animation: n_arrow_btn linear .3s;
+            }
+
+            i {
+                font-size: 13px;
+                color: $color_body;
+    
+            }
+        }
+        
+
+        @keyframes p_arrow_btn {
+            0% {
+                transform: translateX(-3px);
+                opacity: .3;
+            }
+
+            50% {
+                transform: translateX(-6px);
+                opacity: 0;
+            }
+
+            75% {
+                transform: translateX(5px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0px);
+                opacity: 1;
+            }
+        }
+        @keyframes n_arrow_btn {
+            0% {
+                transform: translateX(3px);
+                opacity: .3;
+            }
+
+            50% {
+                transform: translateX(6px);
+                opacity: 0;
+            }
+
+            75% {
+                transform: translateX(-5px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0px);
+                opacity: 1;
+            }
+        }
+
+    }
+}
